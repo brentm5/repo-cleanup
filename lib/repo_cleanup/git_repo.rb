@@ -12,11 +12,11 @@ class RepoCleanup
     end
 
     def git_instance
-      @git_instance ||= Git.open(@working_dir, log: Logger.new(STDOUT))
+      @git_instance ||= Git.open(@working_dir)
     end
 
     def branches
-      git_instance.branches.local
+      git_instance.branches
     end
   end
 end
